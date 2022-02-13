@@ -1,0 +1,93 @@
+body, p {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    color: rgb(80,78,78);
+    text-align: center;
+}
+
+.principal {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 10vh 75vh 15vh;
+    grid-template-areas:
+        "cabecalho cabecalho"
+        "secao barra-lateral"
+        "rodape rodape";
+    background-color: aqua;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    grid-area: cabecalho;
+    background-color: cyan;
+}
+
+section {
+    grid-area: secao;
+    background-color: rgb(253, 100, 126);
+}
+
+aside {
+    grid-area: barra-lateral;
+    background-color: #E0D475;
+}
+
+footer {
+    grid-area: rodape;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.parte1, .parte2, .parte3 {
+    width: 25%;
+    background-color: #5de05e;
+}
+
+.parte2 {
+    width: 50%;
+    margin: 0 2px;
+}
+
+.parte3 {
+    margin: 0;
+}
+
+@media(max-width: 992px) {
+    .principal {
+        grid-template-columns: 100%;
+        grid-template-areas: "cabecalho" "secao" "barra-lateral" "rodape";
+    }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .parte1, .parte2, .parte3 {
+        margin: 0;
+        width: 50%;
+    }
+
+    .parte2 {
+        width: 100%;
+        order: -1;
+    }
+ }
+
+ @media(max-width: 768px) {
+    body {
+        margin: 0 15px;
+    }
+
+    .principal, .parte1, .parte2, .parte3 {
+        width: 100%;
+    }
+
+    .parte2 {
+        order: initial; 
+    }
+ }
